@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        id="goe.dp.cordova.plugins.audio"
+        version="0.1">
+
+    <engines>
+        <engine name="cordova" version=">=3.6.0" />
+    </engines>
+
+    <name>Audio</name>
+    <description>Cordova Audio Plugin for Android Devices</description>
+    <keywords>cordova,audio,volume</keywords>
+    <license>Beerware</license>
+    <keywords>cordova,volume,audio</keywords>
+    <repo>https://github.com/daevidpreis/goe.dp.cordova.plugins.audio.git</repo>
+    <issue>https://github.com/daevidpreis/goe.dp.cordova.plugins.audio/issues</issue>
+
+
+    <js-module src="www/audio.js" name="Audio">
+        <clobbers target="window.plugins.audio" />
+    </js-module>
+
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="Audio">
+                <param name="android-package" value="goe.dp.cordova.plugins.audio.Audio" />
+            </feature>
+        </config-file>
+        <source-file src="src/android/goe/dp/cordova/plugins/audio/Audio.java" target-dir="src/goe/dp/cordova/plugins/audio" />
+    </platform>
+
+</plugin>
